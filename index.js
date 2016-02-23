@@ -1,6 +1,7 @@
 #! /usr/bin/env node
 var fs = require("fs-extra");
 var path = require("path");
+var server = require("./server");
 
 var args = process.argv;
 var command = args[2];
@@ -13,10 +14,11 @@ switch (command) {
   default        : return commandNotFound();
 }
 
+// Keep this process alive so our async tasks finish
 process.stdin.resume();
 
 function newProject(name) {
-  // [x] Create `name` and `.freact` directory
+  // [x] Create `{{name}}` and `.freact` directory
   // [x] Copy boilerplate to `.freact`
 
   var projectPath = path.join(process.cwd(), name || "");
@@ -29,15 +31,13 @@ function newProject(name) {
   });
 }
 
-function startServer() {
-  // [x] Start server
-  // [x] Every request re-builds `app.js`
-  require("./server")();
+function startServer(port) {
+  server(port);
 }
 
 function commandNotFound() {
   console.log("Sorry, bud! I don't recognize that action.");
-  // Print help message
+  console.log("(Try 'freact new' or 'freact start'.)");
 }
 
 function needsCommand() {
@@ -48,11 +48,6 @@ function copyBoilerplate(projectRoot, next) {
   var boilerPath = path.join(__dirname, "boilerplate");
   fs.copySync(boilerPath, projectRoot);
   console.log("Copied boilerplate.");
-}
-
-// general tilities
-function higherOrderCreateDirectory(dirPath) {
-
 }
 
 function getFreactPath(projectRoot) {
