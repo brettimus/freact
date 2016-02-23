@@ -1,0 +1,27 @@
+{
+  "name": "freact",
+  "version": "0.0.0",
+  "description": "quickly start a new react project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "freact"
+  ],
+  "preferGlobal": true,
+  "bin": {
+    "freact": "index.js"
+  },
+  "author": "boots <brbeut@gmail.com> (http://brettim.us/)",
+  "license": "MIT",
+  "dependencies": {
+    "browserify": "^13.0.0",
+    "express": "^4.13.4",
+    "fs-extra": "^0.26.5",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "reactify": "^1.1.1"
+  }
+}

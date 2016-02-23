@@ -1,27 +1,32 @@
 # freact
 > | frēˈakt |
 >
-> to freely start a new react project
+> To freely start a new React project.
 
 ## Quick Use
-* Create a new project
+Go to the freact store.
 ```bash
-freact new free-to-react && cd free-to-react
+npm i -g freact
 ```
-* Just add code!
+
+Grab a serving dish.
+```bash
+freact new free-to-react && \
+cd free-to-react
+```
+
+Serve up some Internet.
+```bash
+freact start
+```
+
+_[Optional]_ Add some toppings in `app.js`.
 ```javascript
-const React = require("react");
-const ReactDOM = require("react-dom");
 // ...
 const App = () => ({
     render() {
-      return <h1> That was quick! </h1>;
+      return <h1> That was <em>super</em> quick! </h1>;
     }
 })
 // ...
-ReactDOM.render(<App />, document.body)
-```
-* Start the development server
-```bash
-freact start
 ```
