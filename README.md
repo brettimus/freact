@@ -1,12 +1,18 @@
+**No longer on npm**
+I gave the package name `freact` to someone else because :heart:.
+
+If you want to run this, install it locally with `npm link`. If that makes no sense to you, email me.
+
 # freact
 > | frēˈakt |
 >
 > To freely start a new React project.
 
 ## Quick Use
-Go to the freact store.
+Go to the freact store. **[CURRENTLY CLOSED]**
 ```bash
-npm i -g freact
+# Sorry, the freact store is closed
+# npm i -g freact
 ```
 
 Do some React in a file called `app.js`.
